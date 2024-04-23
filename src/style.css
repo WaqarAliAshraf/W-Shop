@@ -1,0 +1,263 @@
+/* general css */
+a{
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.appointment,
+.fa-brands {
+    border: 2px solid #63BAB8;
+}
+
+
+.navbar {
+    background-color: #024475;
+}
+
+.fa-solid,
+.fa-brands {
+    color: #63BAB8;
+}
+/* general css */
+
+/* header */
+.main li {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+.main .fa-solid {
+    padding-right: 10px;
+    font-size: 20px;
+
+}
+
+
+
+.fa-brands {
+    height: 30px;
+    width: 30px;
+}
+
+ .fa-brands {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.appointment,
+.appointment-1 {
+    display: inline-block;
+    padding: 10px 50px;
+    margin-left: 25px;
+}
+.nav-link,.appointment{
+    color: white;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+
+
+
+
+/* header */
+/* banner-wrapper */
+.banner-wrapper{
+    padding: 50px 0px;
+}
+.carousel-indicators [data-bs-target]{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+.text{
+    background-color: #024475;
+    color: white;
+    padding: 10px 0px;
+    
+}
+.banner-back-image{
+    background-image: url(./Asserts/images/banner-1.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 345px 0px;
+    background-position: center;
+}
+.carousel-indicators{
+    bottom: -310px;
+}
+/* banner-wrapper */
+/* hero */
+.hero {
+    padding: 50px 0px;
+  }
+  
+ 
+  .hero h3 {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: transparent; 
+    transition: color 0.5s ease;
+  }
+
+  .hero img:hover{
+    opacity: 0.7;
+   transition: 0.5s;
+   cursor: pointer;
+  }
+  
+  .hero img:hover + h3 {
+    color: white;
+  
+  }
+  
+ 
+/* hero */
+
+/* newdrop */
+.newdrop{
+    padding: 50px 0px;
+}
+.newdrop .card{
+    padding: 20px 30px;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0px 0px 7px -3px rgb(0,0,0);
+    color: #024475;
+}
+.newdrop img {
+    transition: transform 0.3s ease; /* Add transition for smooth effect */
+}
+
+.newdrop .card:hover img {
+    transform: scale(1.2); /* Apply zoom effect on hover */
+}
+
+.newdrop .card:hover {
+    color: #63BAB8;
+    transition: transform 0.3s ease;
+}
+
+.image-zoom{
+    
+    overflow: hidden;
+}
+
+
+
+/* newdrop */
+ /* offer */
+ .backgroung-color{
+    background-color: #024475;
+    
+}
+
+.offer{
+   padding: 50px 0px;
+   color: white;
+}
+.offer .fa-solid{
+    color: white;
+    font-size: none;
+}
+
+ /* offer */
+
+   /* off */
+.off{
+    padding: 50px 0px;
+}
+.border-off{
+    background-color: #024475;
+    padding: 2px;
+    margin-top: 3px;
+
+
+}
+   /* off */
+   footer{
+    background-color: white;
+    color: white;
+    padding: 50px 0px;
+    margin-top: 50px;
+   }
+   footer li{
+    margin-left: 30px;
+   }
+   .for-border{
+    border: 4px solid #63BAB8;
+    padding: 20px 0px;
+    background-color: white;
+    color: #63BAB8;
+   }
+   footer ul{
+    margin-bottom: 0;
+   }
+   footer .container{
+    background-color: #024475;
+    padding: 50px 30px;
+   }
+   /* login */
+   .login{
+    /* padding: 50px 0px; */
+    color: white;
+   }
+   .for-p{
+    background-image: url(./Asserts//images//banner-2.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 320px 0pc;
+   }
+
+   h1,h2,h3,p,.nav-link, .appointment,span,h6{
+    font-family: "Merriweather", serif !important;
+  font-weight: 900 !important;
+  font-style: normal;
+  }
+   
+   /* /login */
+
+   /* about */
+   .aboutus{
+    padding: 50px 0px;
+    color: white;
+   }
+   .about-text{
+    color: #024475;
+    text-align: center;
+    margin-bottom: 40px;
+   }
+   .about{
+    padding-top: 70px;
+    color: #024475;
+   }
+   .about .fa-solid{
+    color: #024475;
+   }
+   /* about */
+   /* faq */
+   .faq-text{
+    text-align: center;
+    color: #024475;
+   }
+   .faq{
+    padding: 50px 0px;
+   }
+   /* faq */
