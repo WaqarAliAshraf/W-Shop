@@ -7,12 +7,12 @@ import Offer from './Offer'
 
 const LandingPage = () => {
   return (
-   <>
-   <Banner/>
-   <Hero/>
-   <NewDrop/>
-   <Offer/>
-   </>
+    <>
+      <Banner />
+      <Hero />
+      <NewDrop />
+      <Offer />
+    </>
   )
 }
 

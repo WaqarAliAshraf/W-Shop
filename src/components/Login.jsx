@@ -10,7 +10,7 @@ import FormControl from '@mui/material/FormControl';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
-import banner2 from "./Asserts/images/banner-2.webp";
+
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -39,7 +39,7 @@ const Login = () => {
       // Simulate login delay
       setTimeout(() => {
         // Redirect to /landingpage
-        navigate('/landingpage');
+        navigate('/product');
         setLoading(false);
       }, 2000);
     }
@@ -53,14 +53,14 @@ const Login = () => {
 
   const validatePassword = (password) => {
     // Password validation logic (e.g., minimum length)
-    return password.length >= 6;
+    return password.length > 6;
   };
 
   return (
     <section className='login'>
       <div className="container-fluid">
-        <div className="row  text-center backgroung-color align-items-center">
-          <div className="col-sm-12 col-lg-6 ">
+        <div className="row  text-center justify-content-center backgroung-color align-items-center">
+          <div className="col-sm-12 col-md-8 col-lg-6  pb-5 pb-lg-0">
             <Typography variant='h2' fontWeight="bold">W SHOP</Typography>
             <form style={{ visibility: loading ? 'hidden' : 'visible' }}>
               <TextField
@@ -189,7 +189,6 @@ const Login = () => {
             )}
           </div>
           <div className="col-6 d-none d-lg-flex  for-p">
-            {/* <img src={banner2} alt="" className='img-fluid' /> */}
           </div>
         </div>
       </div>

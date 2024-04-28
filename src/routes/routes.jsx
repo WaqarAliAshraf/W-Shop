@@ -2,13 +2,13 @@
 
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Login from '../Login';
-import LandingPage from '../LandingPage';
+import Login from '../components/Login';
+import LandingPage from '../components/LandingPage';
 import MyLayouts from '../Layouts/MyLayouts';
-import AboutUs from '../AboutUs';
-import Faq from '../Faq';
-import ViewCart from '../ViewCart'; // Adjust the path accordingly
-// import NewDrop from '../NewDrop';
+import AboutUs from '../components/AboutUs';
+import Faq from '../components/Faq';
+import ViewCart from '../components/ViewCart';
+import NewDrop from '../components/NewDrop';
 
 const AppRoutes = () => {
   return (
@@ -18,10 +18,10 @@ const AppRoutes = () => {
         <Route path='/landingpage' element={<LandingPage />} />
         <Route path='/aboutus' element={<AboutUs />} />
         <Route path='/faq' element={<Faq />} />
-        {/* <Route exact="/newdrop" element={<NewDrop/>}/> */}
         <Route path="/viewcart" element={<ViewCart />} />
+        <Route path='product' element={<NewDrop />} />
       </Route>
-        <Route path='/login' element={<Login />} />
+      <Route path='/login' element={<Login />} />
     </Routes>
   );
 };

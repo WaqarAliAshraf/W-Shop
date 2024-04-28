@@ -1,29 +1,28 @@
-// import React, { useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 // import { Typography, Button, Drawer, List, ListItem, ListItemText } from '@mui/material';
-// import drop1 from "./Asserts/images/drop1.webp";
-// import drop2 from "./Asserts/images/drop2.webp";
-// import drop3 from "./Asserts/images/drop3.webp";
-// import drop4 from "./Asserts/images/drop4.webp";
-// import drop5 from "./Asserts/images/drop5.webp";
-// import drop6 from "./Asserts/images/drop6.webp";
-// import drop7 from "./Asserts/images/drop7.webp";
-// import drop8 from "./Asserts/images/drop8.webp";
-// import ViewCart from './ViewCart';
+// import{ DataOfCards} from "./components/DataCards";
+// import { Link } from 'react-router-dom';
+
 
 // const NewDrop = () => {
 //   const [cartOpen, setCartOpen] = useState(false);
 //   const [selectedProducts, setSelectedProducts] = useState([]);
 
-//   let obj = [
-//     { id: 1, product: "Product 1", price: 15.00, imageurl: drop1 },
-//     { id: 2, product: "Product 2", price: 15.00, imageurl: drop2 },
-//     { id: 3, product: "Product 3", price: 15.00, imageurl: drop3 },
-//     { id: 4, product: "Product 4", price: 15.00, imageurl: drop4 },
-//     { id: 5, product: "Product 5", price: 15.00, imageurl: drop5 },
-//     { id: 6, product: "Product 6", price: 15.00, imageurl: drop6 },
-//     { id: 7, product: "Product 7", price: 15.00, imageurl: drop7 },
-//     { id: 8, product: "Product 8", price: 15.00, imageurl: drop8 },
-//   ];
+  
+//   useEffect(() => {
+//     // Retrieve selected products from local storage
+//     const storedProducts = JSON.parse(localStorage.getItem('selectedProducts'));
+//     if (storedProducts) {
+//       setSelectedProducts(storedProducts);
+//     }
+//   }, []);
+
+//   useEffect(() => {
+//     // Store selected products in local storage
+//     localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
+//   }, [selectedProducts]);
+
+
 
 //   const openCartDrawer = () => {
 //     setCartOpen(true);
@@ -35,6 +34,7 @@
 
 //   const addToCart = (product) => {
 //     setSelectedProducts([...selectedProducts, { ...product, quantity: 1 }]);
+//     console.log('Product added to cart:', selectedProducts);
 //   };
 
 //   const removeFromCart = (id) => {
@@ -66,21 +66,29 @@
 //     return selectedProducts.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
 //   };
 
+//   const handleViewCart = () => {
+    
+//     window.location.href = '/viewcart';
+//   };
+
 //   return (
 //     <div>
 //       <section className='newdrop'>
 //         <div className="container">
-//           <div className="row">
-//             {obj.map((item) => (
-//               <div key={item.id} className="col-sm-12 col-md-3 mt-5 mt-lg-0">
-//                 <div className="card">
+//           <div className="row text-center text-lg-start">
+//             {DataOfCards.map((item) => (
+//               <div key={item.id} className="col-sm-12 col-md-6 col-lg-3 mt-5">
+//              <Link to="/products">
+//              <div className="card">
 //                   <div className="image-zoom">
 //                     <img src={item.imageurl} alt="" className='img-fluid' />
 //                   </div>
 //                   <Typography variant='h6' className='mt-3'>{item.product}</Typography>
 //                   <Typography variant='h6'>{`$${item.price.toFixed(2)}`}</Typography>
-//                   <Button onClick={() => { addToCart(item); openCartDrawer(); }}>Add to Cart</Button>
+//                   <Button onClick={() => { addToCart(item); openCartDrawer();}}>Add to Cart</Button>
 //                 </div>
+
+//              </Link>
 //               </div>
 //             ))}
 //           </div>
@@ -104,7 +112,7 @@
 //               </ListItem>
 //             ))}
 //           </List>
-//           <Button onClick={"/viewcart"} component={<ViewCart/>} >View Cart</Button>
+//           <Button onClick={handleViewCart}>View Cart</Button>
 //           <Typography variant="subtitle1">Total Price: ${calculateTotalPrice()}</Typography>
 //           <Button onClick={closeCartDrawer}>Close</Button>
 //         </div>
@@ -116,30 +124,41 @@
 // export default NewDrop;
 
 
+
+
 import React from 'react';
 import { Typography, List, ListItem, ListItemText } from '@mui/material';
 
-const ViewCart = ({ location }) => {
-  
-  const selectedProducts = location && location.state ? location.state.selectedProducts : [];
+const ViewCart = () => {
+  const selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [];
 
   return (
-    <div>
+    <div className='container'>
+    <div className="row justify-content-center text-center">
+      <div className="col-sm-12 col-lg-10">
       <Typography variant="h5" gutterBottom>
-        Shopping Cart
+        Your Cart
       </Typography>
-      <List>
-        {selectedProducts.map((item) => (
-          <ListItem key={item.id}>
-            <img src={item.imageurl} alt={item.product} style={{ height: '100px', marginRight: '16px' }} />
-            <ListItemText
-              primary={item.product}
-              secondary={`Price: $${item.price.toFixed(2)}, Quantity: ${item.quantity}`}
-            />
-          </ListItem>
-        ))}
-      </List>
-      <Typography>your cart is empty</Typography>
+      {selectedProducts.length > 0 ? (
+        <List>
+          {selectedProducts.map((item) => (
+            <ListItem key={item.id}>
+              <img src={item.imageurl} alt={item.product} style={{ height: '100px', marginRight: '16px' }} />
+              <ListItemText
+                primary={item.product}
+                secondary={`Price: $${item.price.toFixed(2)}, Quantity: ${item.quantity}`}
+              />
+
+              
+            </ListItem>
+            
+          ))}
+        </List>
+      ) : (
+        <Typography>Your cart is empty</Typography>
+      )}
+      </div>
+    </div>
     </div>
   );
 };

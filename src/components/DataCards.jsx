@@ -1,11 +1,11 @@
-import drop1 from "./Asserts/images/drop1.webp";
-import drop2 from "./Asserts/images/drop2.webp";
-import drop3 from "./Asserts/images/drop3.webp";
-import drop4 from "./Asserts/images/drop4.webp";
-import drop5 from "./Asserts/images/drop5.webp";
-import drop6 from "./Asserts/images/drop6.webp";
-import drop7 from "./Asserts/images/drop7.webp";
-import drop8 from "./Asserts/images/drop8.webp";
+import drop1 from "../Asserts/images/drop1.webp";
+import drop2 from "../Asserts/images/drop2.webp";
+import drop3 from "../Asserts/images/drop3.webp";
+import drop4 from "../Asserts/images/drop4.webp";
+import drop5 from "../Asserts/images/drop5.webp";
+import drop6 from "../Asserts/images/drop6.webp";
+import drop7 from "../Asserts/images/drop7.webp";
+import drop8 from "../Asserts/images/drop8.webp";
 
 
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import offer2 from "./Asserts/images/offer2.webp"
+import offer2 from "../Asserts/images/offer2.webp"
 import { Typography } from '@mui/material'
 import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material/styles';
 

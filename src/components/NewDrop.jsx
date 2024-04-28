@@ -1,13 +1,35 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Typography, Button, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import { DataOfCards } from "./DataCards";
+import { useNavigate } from 'react-router-dom';
 
 
 const NewDrop = () => {
+
+  const navigate = useNavigate();
+
   const [cartOpen, setCartOpen] = useState(false);
   const [selectedProducts, setSelectedProducts] = useState([]);
 
-  
+
+
+
+
+  useEffect(() => {
+    // Retrieve selected products from local storage
+    const storedProducts = JSON.parse(localStorage.getItem('selectedProducts'));
+    setSelectedProducts(storedProducts);
+  }, []);
+
+  // if (storedProducts) {
+  //   setSelectedProducts(storedProducts);
+  // }
+  // useEffect(() => {
+
+  //   localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
+  // }, [selectedProducts]);
+
+
 
   const openCartDrawer = () => {
     setCartOpen(true);
@@ -19,6 +41,7 @@ const NewDrop = () => {
 
   const addToCart = (product) => {
     setSelectedProducts([...selectedProducts, { ...product, quantity: 1 }]);
+    localStorage.setItem('selectedProducts', JSON.stringify([...selectedProducts, { ...product, quantity: 1 }]));
     console.log('Product added to cart:', selectedProducts);
   };
 
@@ -52,8 +75,8 @@ const NewDrop = () => {
   };
 
   const handleViewCart = () => {
-    
-    window.location.href = '/viewcart';
+    navigate("/viewcart")
+
   };
 
   return (
@@ -63,14 +86,17 @@ const NewDrop = () => {
           <div className="row text-center text-lg-start">
             {DataOfCards.map((item) => (
               <div key={item.id} className="col-sm-12 col-md-6 col-lg-3 mt-5">
+
                 <div className="card">
                   <div className="image-zoom">
                     <img src={item.imageurl} alt="" className='img-fluid' />
                   </div>
                   <Typography variant='h6' className='mt-3'>{item.product}</Typography>
                   <Typography variant='h6'>{`$${item.price.toFixed(2)}`}</Typography>
-                  <Button onClick={() => { addToCart(item); openCartDrawer();}}>Add to Cart</Button>
+                  <Button onClick={() => { addToCart(item); openCartDrawer(); }}>Add to Cart</Button>
                 </div>
+
+
               </div>
             ))}
           </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import aboutus2 from "./Asserts/images/banner-3.webp";
+import banner3 from "../Asserts/images/banner-3.webp";
 import { Typography } from '@mui/material';
 import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material/styles';
 
@@ -38,7 +38,7 @@ return (
 
             </div>
             <div className="col-sm-12 col-md-6 pe-lg-0 mt-5 mt-md-0">
-                <img src={aboutus2} alt="" className='img-fluid' />
+                <img src={banner3} alt="" className='img-fluid' />
             </div>
         </div>
     </div>

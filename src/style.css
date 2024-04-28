@@ -76,9 +76,7 @@ ul {
 
 /* header */
 /* banner-wrapper */
-.banner-wrapper{
-    padding: 50px 0px;
-}
+/*  */
 .carousel-indicators [data-bs-target]{
     height: 30px;
     width: 30px;
@@ -90,16 +88,27 @@ ul {
     padding: 10px 0px;
     
 }
-.banner-back-image{
+.banner-wrapper{
     background-image: url(./Asserts/images/banner-1.webp);
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 345px 0px;
-    background-position: center;
+    padding: 328px 0px;
+    background-position: top;
 }
-.carousel-indicators{
-    bottom: -310px;
+
+
+.carousel-control-prev-icon ,.carousel-control-next-icon{
+    height: 40px;
+    width: 40px;
+    background-color: #024475;
+    border: 3px solid #63BAB8;
 }
+
+.carousel-control-next, .carousel-control-prev {
+    opacity: 10;
+    width: 20%;
+}
+
 /* banner-wrapper */
 /* hero */
 .hero {
