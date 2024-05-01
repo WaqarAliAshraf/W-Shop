@@ -1,13 +1,18 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
+import { useCart } from './CartContext';
 
 
 const Header = () => {
 
   let theme = createTheme();
   theme = responsiveFontSizes(theme);
+
+  const { cartOpen, setCartOpen,first } = useCart()
+
+
 
   return (
     <>
@@ -17,6 +22,7 @@ const Header = () => {
             <div className="col-12 col-sm-10 col-md-10 col-lg-10">
               <ul className="d-flex d-none d-lg-flex">
                 <li>
+
                   <i className="fa-solid fa-mobile-screen-button"></i>
                   <span>+92 3046919328</span>
                 </li>
@@ -44,9 +50,9 @@ const Header = () => {
 
       <nav className="navbar navbar-expand-lg sticky-top">
         <div className="container">
-          
+
           <ThemeProvider theme={theme}>
-          <Typography variant='h3' fontWeight="bold" style={{color:"white"}} >W SHOP</Typography>
+            <Typography variant='h3' fontWeight="bold" style={{ color: "white" }} >W SHOP</Typography>
           </ThemeProvider>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <i className="fa-solid fa-bars"></i>
@@ -57,24 +63,32 @@ const Header = () => {
                 <Link to="/landingpage " className='nav-link'>Home</Link>
               </li>
               <li className="nav-item">
+                <Link to="/product" className='nav-link' >Shop</Link>
+              </li>
+              <li className="nav-item">
                 <Link to="/aboutus" className='nav-link'>About Us</Link>
               </li>
               <li className="nav-item">
                 <Link to="/faq" className='nav-link'>Faq's</Link>
               </li>
+            
               <li className="nav-item">
-                <a className="nav-link" href="">TESTIMONIAL</a>
+                <a className="nav-link" href="">Contact</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="">CONTACT</a>
+                <a className="nav-link" href="">Blog</a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="">BLOG</a>
+              <li >
+                <Link to="/login" className='appointment '> <i class="fa-solid fa-user me-2 "></i> Login</Link>
               </li>
-              <li className="nav-item">
-          <Link to="/login" className='appointment'> <i class="fa-solid fa-user "></i> LogIn</Link>
+              <li>
+              <button className='appointment-2' onClick={() => setCartOpen(true)}>
+            <i class="fa-solid fa-cart-shopping me-2"> </i>
+            Cart
+            </button>
               </li>
             </ul>
+           
           </div>
         </div>
       </nav>

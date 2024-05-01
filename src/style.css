@@ -10,12 +10,12 @@ ul {
 }
 
 .appointment,
-.fa-brands {
+.fa-brands,.appointment-2 {
     border: 2px solid #63BAB8;
 }
 
 
-.navbar {
+.navbar,.appointment-2 {
     background-color: #024475;
 }
 
@@ -53,7 +53,7 @@ ul {
 }
 
 .appointment,
-.appointment-1 {
+.appointment-1,.appointment-2 {
     display: inline-block;
     padding: 10px 50px;
     margin-left: 25px;
@@ -270,3 +270,63 @@ ul {
     padding: 50px 0px;
    }
    /* faq */
+
+   .drawer-content{
+    padding: 150px 50px;
+    background-color: #024475;
+    color: white;
+    
+   }
+   .viewcart{
+    padding: 90px 0px;
+   }
+   .appointment-2 .fa-solid{
+    font-size: 20px;
+    font-weight: 900;
+   }
+.appointment-2{
+    color: white;
+    font-family: "Merriweather", serif !important;
+    font-weight: 900 !important;
+    font-style: normal;
+}
+
+.nav-item {
+    position: relative;
+  }
+  
+  .nav-link {
+    color: white; 
+    position: relative;
+    transition: color 0.3s ease; 
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 100%; 
+    width: 0;
+    height: 2px;
+    background-color:#63BAB8;
+    transition: right 0.3s ease, width 0.3s ease; 
+  }
+  
+  .nav-link:hover  {
+    color:#63BAB8; 
+  }
+  
+  .nav-link:hover::after {
+    right: 0; 
+    width: 100%;
+  }
+
+  .appointment:hover,.appointment-2:hover{
+    background-color: #63BAB8;
+    color: white;
+  }
+
+  .appointment:hover .fa-solid, .appointment-2:hover .fa-solid{
+color: white;
+  }
+  

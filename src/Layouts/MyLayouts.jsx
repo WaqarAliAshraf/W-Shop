@@ -11,6 +11,7 @@ const MyLayouts = () => {
         <Outlet/>
         <Off/>
         <Footer/>
+        
     </div>
   )
 }
