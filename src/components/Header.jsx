@@ -10,7 +10,7 @@ const Header = () => {
   let theme = createTheme();
   theme = responsiveFontSizes(theme);
 
-  const { cartOpen, setCartOpen,first } = useCart()
+  const { cartOpen, setCartOpen } = useCart()
 
 
 

@@ -23,13 +23,6 @@ const NewDrop = () => {
         setSelectedProducts(storedProducts);
     }, []);
 
-    // if (storedProducts) {
-    // setSelectedProducts(storedProducts);
-    // }
-    // useEffect(() => {
-
-    // localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
-    // }, [selectedProducts]);
 
 
 
@@ -60,10 +53,7 @@ const NewDrop = () => {
     };
     
 
-    // const removeFromCart = (id) => {
-    //     const updatedSelectedProducts = selectedProducts.filter(item => item.id !== id);
-    //     setSelectedProducts(updatedSelectedProducts);
-    // };
+   
 
     const removeFromCart = (id) => {
         const updatedSelectedProducts = selectedProducts.filter(item => item.id !== id);

@@ -3,6 +3,8 @@ import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material/s
 import { Typography } from '@mui/material';
 
 
+// offers
+
 const Off = () => {
 
     let theme = createTheme();

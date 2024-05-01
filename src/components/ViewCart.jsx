@@ -17,11 +17,6 @@ const storedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [
 setSelectedProducts(storedProducts);
 }, []);
 
-// const removeFromCart = (id) => {
-// const updatedSelectedProducts = selectedProducts.filter(item => item.id !== id);
-// setSelectedProducts(updatedSelectedProducts);
-// localStorage.setItem('selectedProducts', JSON.stringify(updatedSelectedProducts));
-// };
 
 const removeFromCart = (id) => {
   const updatedSelectedProducts = selectedProducts.filter(item => item.id !== id);

@@ -14,7 +14,6 @@ const CheckoutForm = () => {
             return;
         }
 
-        // Get card element
         const card = elements.getElement(CardElement);
 
       
