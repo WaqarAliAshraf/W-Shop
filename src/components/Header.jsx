@@ -63,6 +63,7 @@ const Header = () => {
                 <Link to="/landingpage " className='nav-link'>Home</Link>
               </li>
               <li className="nav-item">
+                {/* only for checkout extentions  */}
                 <Link to="/product" className='nav-link' >Shop</Link>
               </li>
               <li className="nav-item">
